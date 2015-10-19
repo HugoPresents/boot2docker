@@ -1,8 +1,8 @@
 FROM boot2docker/boot2docker:latest
 MAINTAINER Tuzki Zhang <rabbitzhang52@gmail.com>
 
-RUN rm $ROOTFS/etc/rc.d/automount-shares && \
-    sed -i "s/\/etc\/rc.d\/automount-shares//g" $ROOTFS/opt/bootscript.sh && \
+RUN rm $ROOTFS/etc/rc.d/vbox && \
+    sed -i "s/\/etc\/rc.d\/vbox//g" $ROOTFS/opt/bootscript.sh && \
     echo "/usr/local/etc/init.d/nfs-client start" >> $ROOTFS/opt/bootscript.sh
 
 RUN mkdir $ROOTFS/Users && \
